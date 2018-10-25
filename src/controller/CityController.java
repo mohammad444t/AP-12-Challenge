@@ -60,7 +60,7 @@ public class CityController {
             } else if (request instanceof YieldRequest) {
                 yieldAction((YieldRequest)request, activePlayer);
                 isFinished = true;
-            }
+            } else if ()
         }
 
 
