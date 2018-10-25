@@ -10,18 +10,18 @@
     <node x="1671.0" y="217.0">model.request.LootRequest</node>
     <node x="1154.0" y="251.0">model.request.SeeGillsRequest</node>
     <node x="268.5" y="447.0">model.Element</node>
-    <node x="1619.0" y="447.0">controller.CityController</node>
+    <node x="1065.0" y="447.0">controller.CityController</node>
     <node x="546.0" y="648.0">model.Army</node>
-    <node x="2076.0" y="447.0">controller.CommandAnalyzer</node>
+    <node x="2234.0" y="447.0">controller.CommandAnalyzer</node>
     <node x="1861.0" y="217.0">model.request.AttackRequest</node>
-    <node x="1866.0" y="447.0">OurChallenge</node>
-    <node x="1349.0" y="447.0">view.View</node>
+    <node x="2024.0" y="447.0">OurChallenge</node>
+    <node x="1754.0" y="447.0">view.View</node>
     <node x="364.0" y="615.0">model.Home</node>
     <node x="2985.0" y="217.0">model.request.UpgradeWorkPlaceRequest</node>
-    <node x="1037.0" y="447.0">model.Block</node>
+    <node x="753.0" y="447.0">model.Block</node>
     <node x="0.0" y="648.0">model.Bazaar</node>
     <node x="2469.0" y="151.0">model.request.UpgradeHomeRequest</node>
-    <node x="753.0" y="447.0">model.Player</node>
+    <node x="1470.0" y="447.0">model.Player</node>
     <node x="2243.0" y="217.0">model.request.RemoveBlockRequest</node>
     <node x="0.0" y="184.0">model.request.RemoveWorkPlaceRequest</node>
     <node x="2741.0" y="184.0">model.request.AddGilgArmyRequest</node>
@@ -146,9 +146,9 @@
       <point x="48.399999999999864" y="25.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9" x="1312.0" y="588.8888888888889" />
+  <settings layout="Hierarchic Group" zoom="0.7999999999999997" x="2364.5" y="338.3750000000001" />
   <SelectedNodes>
-    <node>model.Block</node>
+    <node>model.request.UpgradeHomeRequest</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
