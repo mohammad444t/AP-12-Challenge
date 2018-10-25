@@ -16,4 +16,7 @@ public class View {
 
     public void logNotPossible() {
     }
+
+    public void logYield(double Score1, double Score2) {
+    }
 }
