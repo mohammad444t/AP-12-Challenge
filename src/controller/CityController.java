@@ -1,8 +1,14 @@
 package controller;
 
+import model.Bazaar;
+import model.Element;
 import model.Player;
 import model.request.*;
 import view.View;
+import model.Block;
+
+import java.util.ArrayList;
+
 
 public class CityController {
     private Player player1 = new Player();
@@ -13,6 +19,7 @@ public class CityController {
     private CommandAnalyzer commandAnalyzer;
 
     public void listenForCommand() {
+
         boolean isFinished = false;
         while (!isFinished) {
             String command = view.getCommand().trim();
@@ -55,5 +62,51 @@ public class CityController {
                 isFinished = true;
             }
         }
+
+
+
+
+    }
+
+
+    public void addBazaarAction (AddBazaarRequest request, Player activePlayer) {
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        int ID = request.getBlockID();
+
+        if (ID > blocks.size()) {
+            view.logNotPossible();
+        }
+        else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
+            view.logNotPossible();
+        }
+        else {
+            ArrayList<Element> elements = blocks.get(ID-1).getElements();
+            Element newElement = new Bazaar();
+            elements.add(newElement);
+            blocks.get(ID-1).setElements(elements);
+            activePlayer.setBlocks(blocks);
+            view.logAdd(elements.size());
+        }
+    }
+
+    public void addBlockAction(AddBlockRequest request, Player activePlayer) {
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        Block addedBlock = new Block();
+        addedBlock.setBlockSize(15);
+        blocks.add(addedBlock);
+        activePlayer.setBlocks(blocks);
+        view.logAdd(blocks.indexOf(addedBlock)+1);
+    }
+
+    public void addGillgArmyAction (AddGilgArmyRequest request, Player activePlayer) {
+        String type = request.getType();
+        if (type.toLowerCase().equals("defence")) {
+
+        }
+        else {
+
+        }
+
+
     }
 }
