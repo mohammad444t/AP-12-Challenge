@@ -1,11 +1,8 @@
 package controller;
 
-import model.Bazaar;
-import model.Element;
-import model.Player;
+import model.*;
 import model.request.*;
 import view.View;
-import model.Block;
 
 import java.util.ArrayList;
 
@@ -75,44 +72,173 @@ public class CityController {
         ArrayList<Block> blocks = activePlayer.getBlocks();
         int ID = request.getBlockID();
 
+        if ( activePlayer.getMoney()<6000) {
+            view.logNotPossible();
+        }
+        else if (ID > blocks.size()) {
+            view.logNotPossible();
+        }
+        else if (blocks.get(ID-1) == null) {
+            view.logNotPossible();
+        }
+        else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
+            view.logNotPossible();
+        }
+        else if (blocks.get(ID-1).getTotalUnemplyedPersons() < 50) {
+            view.logNotPossible();
+        }
+        else {
+            Block block = blocks.get(ID-1);
+            ArrayList<Element> elements = blocks.get(ID-1).getElements();
+            Element newElement = new Bazaar();
+            elements.add(newElement);
+            block.setTotalUnemplyedPersons(block.getTotalUnemplyedPersons() - 50);
+            blocks.get(ID-1).setElements(elements);
+            blocks.set(ID-1,block);
+            activePlayer.setBlocks(blocks);
+            activePlayer.setMoney( activePlayer.getMoney() - 6000);
+            view.logAdd(elements.size());
+        }
+    }
+
+    public void addBlockAction(AddBlockRequest request, Player activePlayer) {
+        if ( activePlayer.getMoney()<1000) {
+            view.logNotPossible();
+        }
+
+        else {
+            ArrayList<Block> blocks = activePlayer.getBlocks();
+            Block addedBlock = new Block();
+            addedBlock.setBlockSize(15);
+            blocks.add(addedBlock);
+            activePlayer.setBlocks(blocks);
+            activePlayer.setMoney( activePlayer.getMoney() - 1000);
+            view.logAdd(blocks.indexOf(addedBlock) + 1);
+        }
+    }
+
+    public void addGillgArmyAction (AddGilgArmyRequest request, Player activePlayer) {
+        String type = request.getType();
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        if (type.toLowerCase().equals("army")) {
+            int ID = request.getBlockID();
+
+
+            if ( activePlayer.getMoney()<15000) {
+                view.logNotPossible();
+            }
+
+            else if (ID > blocks.size()) {
+                view.logNotPossible();
+            }
+            else if (blocks.get(ID-1) == null) {
+                view.logNotPossible();
+            }
+            else if (!blocks.get(ID-1).isHasDefence()) {
+                view.logNotPossible();
+            }
+            else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
+                view.logNotPossible();
+            }
+
+            else if (blocks.get(ID-1).getTotalUnemplyedPersons() < 100) {
+                view.logNotPossible();
+            }
+            else {
+                Block block = blocks.get(ID-1);
+                ArrayList<Element> elements = block.getElements();
+                block.setHasDefence(true);
+                Element newElement = new Defence();
+                elements.add(newElement);
+                block.setTotalUnemplyedPersons(block.getTotalUnemplyedPersons() - 100);
+                block.setElements(elements);
+                blocks.set(ID-1,block);
+                activePlayer.setMoney( activePlayer.getMoney() - 15000);
+                activePlayer.setBlocks(blocks);
+            }
+        }
+        else {
+            int ID = request.getBlockID();
+
+            if (activePlayer.getMoney()<10000)
+            {
+                view.logNotPossible();
+            }
+            if (ID > blocks.size()) {
+                view.logNotPossible();
+            }
+            else if (blocks.get(ID-1) == null) {
+                view.logNotPossible();
+            }
+            else if (!activePlayer.isHasArmy()) {
+                view.logNotPossible();
+            }
+            else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
+                view.logNotPossible();
+            }
+            else if (blocks.get(ID-1).getTotalUnemplyedPersons() < 30) {
+                view.logNotPossible();
+            }
+
+            else {
+                Block block = blocks.get(ID-1);
+                ArrayList<Element> elements = block.getElements();
+                activePlayer.setHasArmy(true);
+                Element newElement = new Army();
+                elements.add(newElement);
+                block.setTotalUnemplyedPersons( block.getTotalUnemplyedPersons() - 30);
+                block.setElements(elements);
+                blocks.set(ID-1,block);
+                activePlayer.setMoney( activePlayer.getMoney() - 10000);
+
+                activePlayer.setBlocks(blocks);
+            }
+
+        }
+    }
+
+    public void addHomeAction(AddHomeRequest request, Player activePlayer) {
+
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        int numOfFloor = request.getFloorNumbers();
+        int numOfUnit = request.getUnitNumbers();
+        int ID = request.getBlockID();
+        int price = (numOfUnit + numOfFloor)*100 +numOfFloor*300 + 700;
+
+        if (activePlayer.getMoney()<10000)
+        {
+            view.logNotPossible();
+        }
         if (ID > blocks.size()) {
+            view.logNotPossible();
+        }
+        else if (blocks.get(ID-1) == null) {
+            view.logNotPossible();
+        }
+        else if (!activePlayer.isHasArmy()) {
             view.logNotPossible();
         }
         else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
             view.logNotPossible();
         }
         else {
-            ArrayList<Element> elements = blocks.get(ID-1).getElements();
-            Element newElement = new Bazaar();
+            Block block = blocks.get(ID - 1);
+            ArrayList<Element> elements = block.getElements();
+            Element newElement = new Home(numOfFloor, numOfUnit);
             elements.add(newElement);
-            blocks.get(ID-1).setElements(elements);
+            block.setTotalPersons( block.getTotalPersons() + 5*numOfFloor*numOfUnit);
+            block.setTotalUnemplyedPersons( block.getTotalUnemplyedPersons() + 5*numOfFloor*numOfUnit);
+            block.setElements(elements);
+            blocks.set(ID - 1, block);
+            activePlayer.setMoney(activePlayer.getMoney() - price);
             activePlayer.setBlocks(blocks);
-            view.logAdd(elements.size());
         }
+        
     }
 
-    public void addBlockAction(AddBlockRequest request, Player activePlayer) {
-        ArrayList<Block> blocks = activePlayer.getBlocks();
-        Block addedBlock = new Block();
-        addedBlock.setBlockSize(15);
-        blocks.add(addedBlock);
-        activePlayer.setBlocks(blocks);
-        view.logAdd(blocks.indexOf(addedBlock)+1);
-    }
-
-    public void addGillgArmyAction (AddGilgArmyRequest request, Player activePlayer) {
-        String type = request.getType();
-        if (type.toLowerCase().equals("defence")) {
-
-        }
-        else {
-
-        }
-
-
-    }
 
     public void doneAction (DoneRequest request, Player activePlayer) {
 
     }
+
 }
