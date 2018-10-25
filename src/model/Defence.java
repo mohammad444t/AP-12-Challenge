@@ -9,7 +9,7 @@ public class Defence extends Element {
         this.daysBuilt = 1;
     }
 
-    public void increment() {
+    public void incrementDaysBuilt() {
         this.daysBuilt++;
     }
 

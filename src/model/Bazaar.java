@@ -5,17 +5,18 @@ public class Bazaar extends Element {
     private int daysBuilt;
 
     public Bazaar() {
+        persons = 50;
         this.level = 1;
         this.daysBuilt = 1;
     }
 
-    public void increment() {
+    public void incrementDaysBuilt() {
         this.daysBuilt++;
     }
 
     @Override
     public double getScore() {
-        return 0;
+        return Math.pow(10, daysBuilt);
     }
 
     public int getLevel() {

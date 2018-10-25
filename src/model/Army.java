@@ -15,7 +15,7 @@ public class Army extends Element {
         return Math.pow(10, daysBuilt);
     }
 
-    public void increment() {
+    public void incrementDaysBuilt() {
         this.daysBuilt++;
     }
 
@@ -32,6 +32,7 @@ public class Army extends Element {
     }
 
     public void setLevel(int level) {
+
         this.level = level;
     }
 }
