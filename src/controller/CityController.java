@@ -110,5 +110,7 @@ public class CityController {
 
     }
 
-    public void doneAction
+    public void doneAction (DoneRequest request, Player activePlayer) {
+
+    }
 }

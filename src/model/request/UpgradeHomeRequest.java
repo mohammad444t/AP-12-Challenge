@@ -7,10 +7,11 @@ public class UpgradeHomeRequest extends Request {
     private int unitID;
 
 
-    public UpgradeHomeRequest(int blockID, int floor, int unit) {
+    public UpgradeHomeRequest(int blockID, int unitID, int floor, int unit) {
         this.blockID = blockID;
         this.floor = floor;
         this.unit = unit;
+        this.unitID = unitID;
     }
 
     public int getBlockID() {
