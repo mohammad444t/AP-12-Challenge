@@ -6,14 +6,14 @@ public class Block {
 
     private java.util.ArrayList<Element> elements = new ArrayList<Element>();
     private double score = 0;
-    private boolean hasDefense = false;
+    private boolean hasDefence = false;
 
-    public boolean isHasDefense() {
-        return hasDefense;
+    public boolean isHasDefence() {
+        return hasDefence;
     }
 
-    public void setHasDefense(boolean hasDefense) {
-        this.hasDefense = hasDefense;
+    public void setHasDefence(boolean hasDefence) {
+        this.hasDefence = hasDefence;
     }
 
     private int blockSize;
