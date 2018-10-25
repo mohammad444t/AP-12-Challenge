@@ -11,6 +11,14 @@ public class Player {
         return money;
     }
 
+    public boolean isHasArmy() {
+        return hasArmy;
+    }
+
+    public void setHasArmy(boolean hasArmy) {
+        this.hasArmy = hasArmy;
+    }
+
     public void setMoney(int money) {
         this.money = money;
     }
