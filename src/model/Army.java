@@ -6,7 +6,7 @@ public class Army extends Element {
 
     public Army() {
         this.level = 1;
-        this.daysBuilt = 0;
+        this.daysBuilt = 1;
     }
 
     @Override
