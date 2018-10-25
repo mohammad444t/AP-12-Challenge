@@ -1,11 +1,8 @@
 package controller;
 
-import model.Bazaar;
-import model.Element;
-import model.Player;
+import model.*;
 import model.request.*;
 import view.View;
-import model.Block;
 
 import java.util.ArrayList;
 
@@ -37,12 +34,18 @@ public class CityController {
             } else if (request instanceof AddHomeRequest) {
                 addHomeAction((AddHomeRequest) request, activePlayer);
             } else if (request instanceof AttackRequest) {
-                attackAction((AttackRequest) request, activePlayer);
+                if (isPlayer1Active)
+                    attackAction((AttackRequest) request, activePlayer, player2);
+                else
+                    attackAction((AttackRequest) request, activePlayer, player1);
             } else if (request instanceof DoneRequest) {
                 doneAction((DoneRequest) request, activePlayer);
                 isPlayer1Active = !isPlayer1Active;
             } else if (request instanceof LootRequest) {
-                lootAction((LootRequest) request, activePlayer);
+                if (isPlayer1Active)
+                    lootAction((LootRequest) request, activePlayer, player2);
+                else
+                    lootAction((LootRequest) request, activePlayer, player1);
             } else if (request instanceof RemoveBlockRequest) {
                 removeBlockAction((RemoveBlockRequest) request, activePlayer);
             } else if (request instanceof RemoveWorkPlaceRequest) {
@@ -113,6 +116,29 @@ public class CityController {
     }
 
     public void doneAction (DoneRequest request, Player activePlayer) {
-
+        int money = activePlayer.getMoney();
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        for (Block block : blocks) {
+            if (block != null) {
+                money += 100 * block.getTotalUnemplyedPersons();
+                ArrayList<Element> elements = block.getElements();
+                for (Element element : elements) {
+                    if (element instanceof Army) {
+                        ((Army) element).incrementDaysBuilt();
+                        money += ((Army) element).getPersonsIncome();
+                    }
+                    else if (element instanceof Defence) {
+                        ((Defence) element).incrementDaysBuilt();
+                        money += ((Defence) element).getPersonsIncome();
+                    }
+                    else if (element instanceof Bazaar) {
+                        ((Bazaar) element).incrementDaysBuilt();
+                        money += ((Bazaar) element).getPersonsIncome();
+                    }
+                }
+            }
+        }
+        activePlayer.setBlocks(blocks);
+        activePlayer.setMoney(money);
     }
 }
