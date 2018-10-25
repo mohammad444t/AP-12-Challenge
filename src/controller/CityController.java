@@ -489,9 +489,9 @@ public class CityController {
                 home.setUnit(home.getUnit()+1);
             }
         }
-
     }
 
-
-
+    public void badAction(BadRequest request) {
+        view.logNotPossible();
+    }
 }
