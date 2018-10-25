@@ -122,6 +122,7 @@ public class CityController {
             view.logNotPossible();
         }
         else {
+
             int blockSize = blocks.get(request.getBlockID() - 1).getBlockSize();
             int blockLevel = (blockSize - 10) / 5;
             if (blockLevel > 2 || pow(500 , blockLevel) > activePlayer.getMoney()){
@@ -173,6 +174,45 @@ public class CityController {
 
                         }
 
+                    }
+                } else if (elementToUpdate instanceof model.Defence){
+                    Defence defence = (Defence) elementToUpdate;
+                    int defenceLevel = defence.getLevel();
+                    if (defenceLevel > 4 || activePlayer.getMoney() < 5000){
+                        view.logNotPossible();
+                    } else {
+                        int money = activePlayer.getMoney();
+                        activePlayer.setMoney(money - 5000);
+                        defence.setLevel(defenceLevel + 1);
+                        elements.set(request.getUnitID() - 1 , defence);
+                        blockToUpdate.setElements(elements);
+                        blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                        activePlayer.setBlocks(blocks);
+                    }
+                } else if (elementToUpdate instanceof model.Bazaar){
+                    Bazaar bazaar = (Bazaar) elementToUpdate;
+                    int bazaarLevel = bazaar.getLevel();
+                    if (bazaarLevel > 2 || activePlayer.getMoney() < (bazaarLevel - 1) * 5000){
+                        view.logNotPossible();
+                    } else {
+                        int unemployedPersons = blockToUpdate.getTotalUnemplyedPersons();
+                        if (unemployedPersons < 20){
+                            view.logNotPossible();
+                        } else {
+                            blockToUpdate.setTotalUnemplyedPersons( unemployedPersons - 20 );
+                            int money = activePlayer.getMoney();
+                            activePlayer.setMoney(money - (bazaarLevel - 1) * 5000);
+                            if (bazaarLevel == 1){
+                                blockToUpdate.setBasicPoint(blockToUpdate.getBasicPoint() * 1.4 / 1.2);
+                            } else if (bazaarLevel == 2){
+                                blockToUpdate.setBasicPoint(blockToUpdate.getBasicPoint() * 1.6 / 1.4);
+                            }
+                            bazaar.setLevel(bazaarLevel + 1);
+                            elements.set(request.getUnitID() - 1 , bazaar);
+                            blockToUpdate.setElements(elements);
+                            blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                            activePlayer.setBlocks(blocks);
+                        }
                     }
                 }
             }
