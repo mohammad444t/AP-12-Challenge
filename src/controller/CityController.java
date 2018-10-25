@@ -272,6 +272,80 @@ public class CityController {
         activePlayer.setMoney(money);
     }
 
+    public void upgradeBlockAction (UpgradeBlockRequest request , Player activePlayer){
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        if (request.getBlockID() > blocks.size() ){
+            view.logNotPossible();
+        } else if (blocks.get(request.getBlockID() - 1) == null){
+            view.logNotPossible();
+        }
+        else {
+            int blockSize = blocks.get(request.getBlockID() - 1).getBlockSize();
+            int blockLevel = (blockSize - 10) / 5;
+            if (blockLevel > 2 || pow(500 , blockLevel) > activePlayer.getMoney()){
+                view.logNotPossible();
+            } else{
+                activePlayer.setMoney(activePlayer.getMoney() - pow(500 , blockLevel));
+                blockSize += 5;
+                Block blockToUpdate = blocks.get(request.getBlockID() - 1);
+                blockToUpdate.setBlockSize(blockSize);
+                blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                activePlayer.setBlocks(blocks);
+            }
+        }
+    }
+
+    public void upgradeWorkPlaceAction (UpgradeWorkPlaceRequest request , Player activePlayer){
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        if (request.getBlockID() > blocks.size() ){
+            view.logNotPossible();
+        } else if (blocks.get(request.getBlockID() - 1) == null){
+            view.logNotPossible();
+        } else{
+            Block blockToUpdate = blocks.get(request.getBlockID() - 1);
+            ArrayList<Element> elements = blockToUpdate.getElements();
+            if (request.getUnitID() >  elements.size()){
+                view.logNotPossible();
+            } else if (elements.get(request.getUnitID() - 1) == null){
+                view.logNotPossible();
+            } else{
+                Element elementToUpdate = elements.get(request.getUnitID() - 1);
+                if (elementToUpdate instanceof model.Army){
+                    Army army = (Army)elementToUpdate;
+                    int armyLevel = army.getLevel();
+                    if (armyLevel > 4 || activePlayer.getMoney() < 20000){
+                        view.logNotPossible();
+                    } else {
+                        int unemployedPersons = blockToUpdate.getTotalUnemplyedPersons();
+                        if (unemployedPersons < 10){
+                            view.logNotPossible();
+                        } else {
+                            blockToUpdate.setTotalUnemplyedPersons( unemployedPersons - 10 );
+                            int money = activePlayer.getMoney();
+                            activePlayer.setMoney(money - 20000);
+                            army.setLevel(armyLevel + 1);
+                            elements.set(request.getUnitID() - 1 , army);
+                            blockToUpdate.setElements(elements);
+                            blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                            activePlayer.setBlocks(blocks);
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+    }
+    public int pow (int base , int power){
+        int toReturn = 1;
+        for (int i = 0 ; i < power ; i++){
+            toReturn = toReturn * base;
+        }
+        return toReturn;
+    }
+
     public void removeBlockAction ( RemoveBlockRequest request, Player activePlayer) {
         ArrayList<Block> blocks = activePlayer.getBlocks();
         int ID = request.getBlockID();
