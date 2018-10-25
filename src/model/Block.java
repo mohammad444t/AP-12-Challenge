@@ -22,4 +22,5 @@ public class Block {
     private java.util.ArrayList<Element> elements = new ArrayList<Element>();
     private double score = 0;
     private boolean hasDefense = false;
+    private int blockSize;
 }
