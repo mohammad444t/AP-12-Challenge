@@ -54,8 +54,8 @@ public class CityController {
                 seeGillsAction((SeeGillsRequest)request, activePlayer);
             } else if (request instanceof SeeScoreRequest) {
                 seeScoreAction((SeeScoreRequest)request, activePlayer);
-            } else if (request instanceof UpgaradeBlockRequest) {
-                upgradeBlockAction((UpgaradeBlockRequest)request, activePlayer);
+            } else if (request instanceof UpgradeBlockRequest) {
+                upgradeBlockAction((UpgradeBlockRequest)request, activePlayer);
             } else if (request instanceof UpgradeHomeRequest) {
                 upgradeHomeAction((UpgradeHomeRequest)request, activePlayer);
             } else if (request instanceof UpgradeWorkPlaceRequest) {
@@ -459,7 +459,7 @@ public class CityController {
         view.logYield(score1,score2);
     }
 
-    public void upgradeHome ( UpgradeHomeRequest request, Player activePlayer) {
+    public void upgradeHomeAction ( UpgradeHomeRequest request, Player activePlayer) {
         ArrayList<Block> blocks = activePlayer.getBlocks();
         int isUnit = request.getUnit();
         int isFloor = request.getFloor();

@@ -1,9 +1,9 @@
 package model.request;
 
-public class UpgaradeBlockRequest extends Request {
+public class UpgradeBlockRequest extends Request {
     private int blockID;
 
-    public UpgaradeBlockRequest(int blockID) {
+    public UpgradeBlockRequest(int blockID) {
         this.blockID = blockID;
     }
 
