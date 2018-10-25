@@ -1,11 +1,29 @@
 package model;
 
 public class Army extends Element {
-    private int level = 1;
+    private int level;
+    private int daysBuilt;
+
+    public Army() {
+        this.level = 1;
+        this.daysBuilt = 0;
+    }
 
     @Override
     public double getScore() {
         return 0;
+    }
+
+    public void increment() {
+        this.daysBuilt++;
+    }
+
+    public int getDaysBuilt() {
+        return daysBuilt;
+    }
+
+    public void setDaysBuilt(int daysBuilt) {
+        this.daysBuilt = daysBuilt;
     }
 
     public int getLevel() {
@@ -14,8 +32,5 @@ public class Army extends Element {
 
     public void setLevel(int level) {
         this.level = level;
-    }
-
-    public Army() {
     }
 }

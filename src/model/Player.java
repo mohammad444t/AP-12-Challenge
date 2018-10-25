@@ -32,6 +32,7 @@ public class Player {
     }
 
     public double getScore() {
-        return 0;
+        double score = 0;
+        return score;
     }
 }

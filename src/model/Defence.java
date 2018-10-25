@@ -1,9 +1,16 @@
 package model;
 
 public class Defence extends Element {
-    private int level = 1;
+    private int level;
+    private int daysBuilt;
 
     public Defence() {
+        this.level = 1;
+        this.daysBuilt = 0;
+    }
+
+    public void increment() {
+        this.daysBuilt++;
     }
 
     @Override
