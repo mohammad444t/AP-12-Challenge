@@ -3,40 +3,40 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="2051.0" y="251.0">model.request.AddBlockRequest</node>
-    <node x="483.0" y="151.0">model.request.AddHomeRequest</node>
-    <node x="1335.0" y="251.0">model.request.DoneRequest</node>
-    <node x="965.0" y="251.0">model.request.SeeScoreRequest</node>
-    <node x="1671.0" y="217.0">model.request.LootRequest</node>
-    <node x="1154.0" y="251.0">model.request.SeeGillsRequest</node>
-    <node x="268.5" y="447.0">model.Element</node>
-    <node x="1065.0" y="447.0">controller.CityController</node>
-    <node x="546.0" y="648.0">model.Army</node>
-    <node x="2234.0" y="447.0">controller.CommandAnalyzer</node>
-    <node x="1861.0" y="217.0">model.request.AttackRequest</node>
-    <node x="2024.0" y="447.0">OurChallenge</node>
-    <node x="1754.0" y="447.0">view.View</node>
-    <node x="364.0" y="615.0">model.Home</node>
-    <node x="2985.0" y="217.0">model.request.UpgradeWorkPlaceRequest</node>
-    <node x="753.0" y="447.0">model.Block</node>
-    <node x="0.0" y="648.0">model.Bazaar</node>
+    <node x="2051.0" y="284.0">model.request.AddBlockRequest</node>
+    <node x="483.0" y="184.0">model.request.AddHomeRequest</node>
+    <node x="1335.0" y="284.0">model.request.DoneRequest</node>
+    <node x="965.0" y="284.0">model.request.SeeScoreRequest</node>
+    <node x="1671.0" y="250.0">model.request.LootRequest</node>
+    <node x="1154.0" y="284.0">model.request.SeeGillsRequest</node>
+    <node x="268.5" y="513.0">model.Element</node>
+    <node x="1082.0" y="513.0">controller.CityController</node>
+    <node x="546.0" y="681.0">model.Army</node>
+    <node x="2251.0" y="513.0">controller.CommandAnalyzer</node>
+    <node x="1861.0" y="250.0">model.request.AttackRequest</node>
+    <node x="2041.0" y="513.0">OurChallenge</node>
+    <node x="1771.0" y="513.0">view.View</node>
+    <node x="364.0" y="692.0">model.Home</node>
+    <node x="3004.0" y="250.0">model.request.UpgradeWorkPlaceRequest</node>
+    <node x="770.0" y="513.0">model.Block</node>
+    <node x="0.0" y="703.0">model.Bazaar</node>
     <node x="2469.0" y="151.0">model.request.UpgradeHomeRequest</node>
-    <node x="1470.0" y="447.0">model.Player</node>
-    <node x="2243.0" y="217.0">model.request.RemoveBlockRequest</node>
-    <node x="0.0" y="184.0">model.request.RemoveWorkPlaceRequest</node>
-    <node x="2741.0" y="184.0">model.request.AddGilgArmyRequest</node>
-    <node x="182.0" y="648.0">model.Defence</node>
-    <node x="1505.0" y="251.0">model.request.YieldRequest</node>
-    <node x="731.0" y="217.0">model.request.UpgaradeBlockRequest</node>
+    <node x="1487.0" y="513.0">model.Player</node>
+    <node x="2243.0" y="250.0">model.request.RemoveBlockRequest</node>
+    <node x="0.0" y="217.0">model.request.RemoveWorkPlaceRequest</node>
+    <node x="2760.0" y="217.0">model.request.AddGilgArmyRequest</node>
+    <node x="182.0" y="703.0">model.Defence</node>
+    <node x="1505.0" y="284.0">model.request.YieldRequest</node>
+    <node x="731.0" y="250.0">model.request.UpgaradeBlockRequest</node>
     <node x="1517.5" y="0.0">model.request.Request</node>
-    <node x="272.0" y="217.0">model.request.AddBazaarRequest</node>
+    <node x="272.0" y="250.0">model.request.AddBazaarRequest</node>
   </nodes>
   <notes />
   <edges>
     <edge source="model.Defence" target="model.Element">
-      <point x="0.0" y="-70.5" />
-      <point x="263.0" y="595.0" />
-      <point x="332.625" y="595.0" />
+      <point x="0.0" y="-92.5" />
+      <point x="263.0" y="661.0" />
+      <point x="332.625" y="661.0" />
       <point x="-21.375" y="59.0" />
     </edge>
     <edge source="model.request.RemoveBlockRequest" target="model.request.Request">
@@ -52,8 +52,8 @@
       <point x="8.066666666666606" y="25.5" />
     </edge>
     <edge source="model.request.UpgradeHomeRequest" target="model.request.Request">
-      <point x="0.0" y="-125.5" />
-      <point x="2595.0" y="91.0" />
+      <point x="0.0" y="-158.5" />
+      <point x="2604.5" y="91.0" />
       <point x="1618.3333333333333" y="91.0" />
       <point x="40.33333333333326" y="25.5" />
     </edge>
@@ -71,20 +71,20 @@
     </edge>
     <edge source="model.request.UpgradeWorkPlaceRequest" target="model.request.Request">
       <point x="0.0" y="-59.5" />
-      <point x="3103.0" y="71.0" />
+      <point x="3122.0" y="71.0" />
       <point x="1634.4666666666667" y="71.0" />
       <point x="56.4666666666667" y="25.5" />
     </edge>
     <edge source="model.Bazaar" target="model.Element">
-      <point x="0.0" y="-70.5" />
-      <point x="81.0" y="585.0" />
-      <point x="289.875" y="585.0" />
+      <point x="0.0" y="-92.5" />
+      <point x="81.0" y="651.0" />
+      <point x="289.875" y="651.0" />
       <point x="-64.125" y="59.0" />
     </edge>
     <edge source="model.Army" target="model.Element">
-      <point x="0.0" y="-70.5" />
-      <point x="627.0" y="585.0" />
-      <point x="418.125" y="585.0" />
+      <point x="0.0" y="-114.5" />
+      <point x="635.5" y="651.0" />
+      <point x="418.125" y="651.0" />
       <point x="64.125" y="59.0" />
     </edge>
     <edge source="model.request.SeeScoreRequest" target="model.request.Request">
@@ -107,8 +107,8 @@
     </edge>
     <edge source="model.Home" target="model.Element">
       <point x="0.0" y="-103.5" />
-      <point x="445.0" y="595.0" />
-      <point x="375.375" y="595.0" />
+      <point x="445.0" y="661.0" />
+      <point x="375.375" y="661.0" />
       <point x="21.375" y="59.0" />
     </edge>
     <edge source="model.request.DoneRequest" target="model.request.Request">
@@ -141,12 +141,12 @@
     </edge>
     <edge source="model.request.AddGilgArmyRequest" target="model.request.Request">
       <point x="0.0" y="-92.5" />
-      <point x="2853.0" y="81.0" />
+      <point x="2872.0" y="81.0" />
       <point x="1626.3999999999999" y="81.0" />
       <point x="48.399999999999864" y="25.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7999999999999997" x="2364.5" y="338.3750000000001" />
+  <settings layout="Hierarchic Group" zoom="1.4000000000000001" x="568.269230769231" y="610.8269230769229" />
   <SelectedNodes>
     <node>model.request.UpgradeHomeRequest</node>
   </SelectedNodes>

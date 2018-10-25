@@ -5,13 +5,14 @@ public class Army extends Element {
     private int daysBuilt;
 
     public Army() {
+        persons = 100;
         this.level = 1;
         this.daysBuilt = 1;
     }
 
     @Override
     public double getScore() {
-        return 0;
+        return Math.pow(10, daysBuilt);
     }
 
     public void increment() {

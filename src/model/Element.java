@@ -1,7 +1,7 @@
 package model;
 
 public abstract class Element {
-    private int persons = 0;
+    protected int persons = 0;
 
     public int getPersons() {
         return persons;
