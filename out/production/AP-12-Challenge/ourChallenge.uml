@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+<<<<<<< Updated upstream
+    <node x="1036.0" y="294.0">model.request.AddBlockRequest</node>
+    <node x="2548.0" y="194.0">model.request.AddHomeRequest</node>
+    <node x="1774.0" y="294.0">model.request.DoneRequest</node>
+    <node x="2125.0" y="294.0">model.request.SeeScoreRequest</node>
+    <node x="1418.0" y="260.0">model.request.LootRequest</node>
+    <node x="1944.0" y="294.0">model.request.SeeGillsRequest</node>
+    <node x="272.75" y="523.0">model.Element</node>
+    <node x="1082.0" y="523.0">controller.CityController</node>
+    <node x="364.0" y="691.0">model.Army</node>
+    <node x="2251.0" y="523.0">controller.CommandAnalyzer</node>
+    <node x="1228.0" y="260.0">model.request.AttackRequest</node>
+    <node x="2041.0" y="523.0">OurChallenge</node>
+    <node x="1771.0" y="523.0">view.View</node>
+    <node x="3279.0" y="305.0">model.request.BadRequest</node>
+    <node x="563.0" y="702.0">model.Home</node>
+    <node x="0.0" y="227.0">model.request.UpgradeWorkPlaceRequest</node>
+    <node x="770.0" y="523.0">model.Block</node>
+    <node x="182.00000000000003" y="713.0">model.Bazaar</node>
+    <node x="519.0" y="161.0">model.request.UpgradeHomeRequest</node>
+    <node x="1487.0" y="523.0">model.Player</node>
+    <node x="810.0" y="260.0">model.request.RemoveBlockRequest</node>
+    <node x="3007.0" y="227.0">model.request.RemoveWorkPlaceRequest</node>
+    <node x="275.0" y="227.0">model.request.AddGilgArmyRequest</node>
+    <node x="0.0" y="713.0">model.Defence</node>
+    <node x="1608.0" y="294.0">model.request.YieldRequest</node>
+    <node x="2314.0" y="260.0">model.request.UpgaradeBlockRequest</node>
+    <node x="1704.5" y="0.0">model.request.Request</node>
+    <node x="2796.0" y="260.0">model.request.AddBazaarRequest</node>
+=======
+<<<<<<< Updated upstream
+    <node x="2051.0" y="284.0">model.request.AddBlockRequest</node>
+    <node x="483.0" y="184.0">model.request.AddHomeRequest</node>
+    <node x="1335.0" y="284.0">model.request.DoneRequest</node>
+    <node x="965.0" y="284.0">model.request.SeeScoreRequest</node>
+    <node x="1671.0" y="250.0">model.request.LootRequest</node>
+    <node x="1154.0" y="284.0">model.request.SeeGillsRequest</node>
+    <node x="268.5" y="513.0">model.Element</node>
+    <node x="1082.0" y="513.0">controller.CityController</node>
+    <node x="546.0" y="681.0">model.Army</node>
+    <node x="2251.0" y="513.0">controller.CommandAnalyzer</node>
+    <node x="1861.0" y="250.0">model.request.AttackRequest</node>
+    <node x="2041.0" y="513.0">OurChallenge</node>
+    <node x="1771.0" y="513.0">view.View</node>
+    <node x="364.0" y="692.0">model.Home</node>
+    <node x="3004.0" y="250.0">model.request.UpgradeWorkPlaceRequest</node>
+    <node x="770.0" y="513.0">model.Block</node>
+    <node x="0.0" y="703.0">model.Bazaar</node>
+=======
+<<<<<<< Updated upstream
+    <node x="2051.0" y="251.0">model.request.AddBlockRequest</node>
+    <node x="483.0" y="151.0">model.request.AddHomeRequest</node>
+    <node x="1335.0" y="251.0">model.request.DoneRequest</node>
+    <node x="965.0" y="251.0">model.request.SeeScoreRequest</node>
+    <node x="1671.0" y="217.0">model.request.LootRequest</node>
+    <node x="1154.0" y="251.0">model.request.SeeGillsRequest</node>
+    <node x="268.5" y="447.0">model.Element</node>
+    <node x="1619.0" y="447.0">controller.CityController</node>
+    <node x="546.0" y="648.0">model.Army</node>
+    <node x="2076.0" y="447.0">controller.CommandAnalyzer</node>
+    <node x="1861.0" y="217.0">model.request.AttackRequest</node>
+    <node x="1866.0" y="447.0">OurChallenge</node>
+    <node x="1349.0" y="447.0">view.View</node>
+    <node x="364.0" y="615.0">model.Home</node>
+    <node x="2985.0" y="217.0">model.request.UpgradeWorkPlaceRequest</node>
+    <node x="1037.0" y="447.0">model.Block</node>
+    <node x="0.0" y="648.0">model.Bazaar</node>
+>>>>>>> Stashed changes
+    <node x="2469.0" y="151.0">model.request.UpgradeHomeRequest</node>
+    <node x="1487.0" y="513.0">model.Player</node>
+    <node x="2243.0" y="250.0">model.request.RemoveBlockRequest</node>
+    <node x="0.0" y="217.0">model.request.RemoveWorkPlaceRequest</node>
+    <node x="2760.0" y="217.0">model.request.AddGilgArmyRequest</node>
+    <node x="182.0" y="703.0">model.Defence</node>
+    <node x="1505.0" y="284.0">model.request.YieldRequest</node>
+    <node x="731.0" y="250.0">model.request.UpgaradeBlockRequest</node>
+    <node x="1517.5" y="0.0">model.request.Request</node>
+<<<<<<< Updated upstream
+    <node x="272.0" y="250.0">model.request.AddBazaarRequest</node>
+=======
+    <node x="272.0" y="217.0">model.request.AddBazaarRequest</node>
+=======
+    <node x="1453.0" y="251.0">model.request.AddBlockRequest</node>
+    <node x="235.0" y="151.0">model.request.AddHomeRequest</node>
+    <node x="1664.0" y="251.0">model.request.DoneRequest</node>
+    <node x="1244.0" y="251.0">model.request.SeeScoreRequest</node>
+    <node x="1044.0" y="251.0">model.request.SeeGillsRequest</node>
+    <node x="3080.0" y="217.0">model.request.LootRequest</node>
+    <node x="291.5" y="447.0">model.Element</node>
+    <node x="1781.0" y="447.0">controller.CityController</node>
+    <node x="2278.0" y="447.0">controller.CommandAnalyzer</node>
+    <node x="398.0" y="648.0">model.Army</node>
+    <node x="1848.0" y="217.0">model.request.AttackRequest</node>
+    <node x="2049.0" y="447.0">OurChallenge</node>
+    <node x="1487.0" y="447.0">view.View</node>
+    <node x="199.0" y="615.0">model.Home</node>
+    <node x="1139.0" y="447.0">model.Block</node>
+    <node x="597.0" y="648.0">model.Bazaar</node>
+    <node x="2794.0" y="217.0">model.request.UpgradeWorkPlaceRequest</node>
+    <node x="2307.0" y="151.0">model.request.UpgradeHomeRequest</node>
+    <node x="821.0" y="447.0">model.Player</node>
+    <node x="2057.0" y="217.0">model.request.RemoveBlockRequest</node>
+    <node x="3289.0" y="184.0">model.request.RemoveWorkPlaceRequest</node>
+    <node x="774.0" y="184.0">model.request.AddGilgArmyRequest</node>
+    <node x="0.0" y="648.0">model.Defence</node>
+    <node x="2612.0" y="251.0">model.request.YieldRequest</node>
+    <node x="512.0" y="217.0">model.request.UpgaradeBlockRequest</node>
+    <node x="1680.0" y="0.0">model.request.Request</node>
+    <node x="0.0" y="217.0">model.request.AddBazaarRequest</node>
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="model.Defence" target="model.Element">
+<<<<<<< Updated upstream
+      <point x="0.0" y="-92.5" />
+<<<<<<< Updated upstream
+      <point x="81.0" y="661.0" />
+      <point x="294.125" y="661.0" />
+      <point x="-64.125" y="59.0" />
+=======
+      <point x="263.0" y="661.0" />
+      <point x="332.625" y="661.0" />
+=======
+      <point x="0.0" y="-70.5" />
+<<<<<<< Updated upstream
+      <point x="263.0" y="595.0" />
+      <point x="332.625" y="595.0" />
+>>>>>>> Stashed changes
+      <point x="-21.375" y="59.0" />
+>>>>>>> Stashed changes
+    </edge>
+    <edge source="model.request.RemoveBlockRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="913.0" y="101.0" />
+      <point x="1730.96875" y="101.0" />
+      <point x="-34.03125" y="25.5" />
+    </edge>
+    <edge source="model.request.BadRequest" target="model.request.Request">
+      <point x="0.0" y="-14.5" />
+      <point x="3334.0" y="71.0" />
+      <point x="1821.71875" y="71.0" />
+      <point x="56.71875" y="25.5" />
+    </edge>
+    <edge source="model.request.LootRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="1503.0" y="131.0" />
+      <point x="1753.65625" y="131.0" />
+      <point x="-11.34375" y="25.5" />
+    </edge>
+    <edge source="model.request.UpgradeHomeRequest" target="model.request.Request">
+      <point x="0.0" y="-158.5" />
+      <point x="654.5" y="91.0" />
+      <point x="1723.40625" y="91.0" />
+      <point x="-41.59375" y="25.5" />
+    </edge>
+    <edge source="model.request.AddBlockRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="1122.0" y="111.0" />
+      <point x="1738.53125" y="111.0" />
+      <point x="-26.46875" y="25.5" />
+    </edge>
+    <edge source="model.request.RemoveWorkPlaceRequest" target="model.request.Request">
+      <point x="0.0" y="-92.5" />
+      <point x="3133.0" y="81.0" />
+      <point x="1814.15625" y="81.0" />
+      <point x="49.15625" y="25.5" />
+    </edge>
+    <edge source="model.request.UpgradeWorkPlaceRequest" target="model.request.Request">
+      <point x="0.0" y="-92.5" />
+      <point x="127.5" y="71.0" />
+      <point x="1708.28125" y="71.0" />
+      <point x="-56.71875" y="25.5" />
+    </edge>
+    <edge source="model.Bazaar" target="model.Element">
+      <point x="0.0" y="-92.5" />
+      <point x="263.0" y="671.0" />
+      <point x="336.875" y="671.0" />
+      <point x="-21.375" y="59.0" />
+    </edge>
+    <edge source="model.Army" target="model.Element">
+      <point x="0.0" y="-114.5" />
+      <point x="453.5" y="671.0" />
+      <point x="379.625" y="671.0" />
+      <point x="21.375" y="59.0" />
+    </edge>
+    <edge source="model.request.SeeScoreRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="2209.5" y="121.0" />
+      <point x="1783.90625" y="121.0" />
+      <point x="18.90625" y="25.5" />
+    </edge>
+    <edge source="model.request.SeeGillsRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="2024.5" y="131.0" />
+      <point x="1776.34375" y="131.0" />
+      <point x="11.34375" y="25.5" />
+    </edge>
+    <edge source="model.request.AddHomeRequest" target="model.request.Request">
+      <point x="0.0" y="-125.5" />
+      <point x="2662.0" y="101.0" />
+      <point x="1799.03125" y="101.0" />
+      <point x="34.03125" y="25.5" />
+    </edge>
+    <edge source="model.Home" target="model.Element">
+      <point x="0.0" y="-103.5" />
+      <point x="644.0" y="661.0" />
+      <point x="422.375" y="661.0" />
+      <point x="64.125" y="59.0" />
+    </edge>
+    <edge source="model.request.DoneRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="1849.0" y="141.0" />
+      <point x="1768.78125" y="141.0" />
+      <point x="3.78125" y="25.5" />
+    </edge>
+    <edge source="model.request.AttackRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="1313.0" y="121.0" />
+      <point x="1746.09375" y="121.0" />
+      <point x="-18.90625" y="25.5" />
+    </edge>
+    <edge source="model.request.UpgaradeBlockRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="2421.0" y="111.0" />
+      <point x="1791.46875" y="111.0" />
+      <point x="26.46875" y="25.5" />
+    </edge>
+    <edge source="model.request.AddBazaarRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="2891.5" y="91.0" />
+      <point x="1806.59375" y="91.0" />
+      <point x="41.59375" y="25.5" />
+    </edge>
+    <edge source="model.request.YieldRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="1681.0" y="141.0" />
+      <point x="1761.21875" y="141.0" />
+      <point x="-3.78125" y="25.5" />
+    </edge>
+    <edge source="model.request.AddGilgArmyRequest" target="model.request.Request">
+      <point x="0.0" y="-92.5" />
+      <point x="387.0" y="81.0" />
+      <point x="1715.84375" y="81.0" />
+      <point x="-49.15625" y="25.5" />
+    </edge>
+  </edges>
+<<<<<<< Updated upstream
+  <settings layout="Hierarchic Group" zoom="0.7999999999999999" x="2164.5" y="252.375" />
+=======
+<<<<<<< Updated upstream
+  <settings layout="Hierarchic Group" zoom="1.4000000000000001" x="568.269230769231" y="610.8269230769229" />
+=======
+  <settings layout="Hierarchic Group" zoom="0.9" x="1312.0" y="588.8888888888889" />
+=======
+      <point x="89.5" y="585.0" />
+      <point x="315.625" y="585.0" />
+      <point x="-72.375" y="59.0" />
+    </edge>
+    <edge source="model.request.RemoveBlockRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="2172.0" y="121.0" />
+      <point x="1763.6" y="121.0" />
+      <point x="17.59999999999991" y="25.5" />
+    </edge>
+    <edge source="model.request.LootRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="3174.5" y="81.0" />
+      <point x="1798.8" y="81.0" />
+      <point x="52.799999999999955" y="25.5" />
+    </edge>
+    <edge source="model.request.UpgradeHomeRequest" target="model.request.Request">
+      <point x="0.0" y="-125.5" />
+      <point x="2449.5" y="111.0" />
+      <point x="1772.4" y="111.0" />
+      <point x="26.40000000000009" y="25.5" />
+    </edge>
+    <edge source="model.request.AddBlockRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="1548.5" y="131.0" />
+      <point x="1737.2" y="131.0" />
+      <point x="-8.799999999999955" y="25.5" />
+    </edge>
+    <edge source="model.request.RemoveWorkPlaceRequest" target="model.request.Request">
+      <point x="0.0" y="-92.5" />
+      <point x="3431.5" y="71.0" />
+      <point x="1807.6" y="71.0" />
+      <point x="61.59999999999991" y="25.5" />
+    </edge>
+    <edge source="model.request.UpgradeWorkPlaceRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="2927.0" y="91.0" />
+      <point x="1790.0" y="91.0" />
+      <point x="44.0" y="25.5" />
+    </edge>
+    <edge source="model.Bazaar" target="model.Element">
+      <point x="0.0" y="-70.5" />
+      <point x="686.5" y="585.0" />
+      <point x="460.375" y="585.0" />
+      <point x="72.375" y="59.0" />
+    </edge>
+    <edge source="model.Army" target="model.Element">
+      <point x="0.0" y="-70.5" />
+      <point x="487.5" y="595.0" />
+      <point x="412.125" y="595.0" />
+      <point x="24.125" y="59.0" />
+    </edge>
+    <edge source="model.request.SeeScoreRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="1338.5" y="121.0" />
+      <point x="1728.4" y="121.0" />
+      <point x="-17.59999999999991" y="25.5" />
+    </edge>
+    <edge source="model.request.SeeGillsRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="1134.0" y="111.0" />
+      <point x="1719.6" y="111.0" />
+      <point x="-26.40000000000009" y="25.5" />
+    </edge>
+    <edge source="model.request.AddHomeRequest" target="model.request.Request">
+      <point x="0.0" y="-125.5" />
+      <point x="363.5" y="81.0" />
+      <point x="1693.2" y="81.0" />
+      <point x="-52.799999999999955" y="25.5" />
+    </edge>
+    <edge source="model.Home" target="model.Element">
+      <point x="0.0" y="-103.5" />
+      <point x="288.5" y="595.0" />
+      <point x="363.875" y="595.0" />
+      <point x="-24.125" y="59.0" />
+    </edge>
+    <edge source="model.request.DoneRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="model.request.AttackRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="1942.5" y="131.0" />
+      <point x="1754.8" y="131.0" />
+      <point x="8.799999999999955" y="25.5" />
+    </edge>
+    <edge source="model.request.UpgaradeBlockRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="633.0" y="91.0" />
+      <point x="1702.0" y="91.0" />
+      <point x="-44.0" y="25.5" />
+    </edge>
+    <edge source="model.request.AddBazaarRequest" target="model.request.Request">
+      <point x="0.0" y="-59.5" />
+      <point x="107.5" y="71.0" />
+      <point x="1684.4" y="71.0" />
+      <point x="-61.59999999999991" y="25.5" />
+    </edge>
+    <edge source="model.request.YieldRequest" target="model.request.Request">
+      <point x="0.0" y="-25.5" />
+      <point x="2693.0" y="101.0" />
+      <point x="1781.2" y="101.0" />
+      <point x="35.200000000000045" y="25.5" />
+    </edge>
+    <edge source="model.request.AddGilgArmyRequest" target="model.request.Request">
+      <point x="0.0" y="-92.5" />
+      <point x="899.0" y="101.0" />
+      <point x="1710.8" y="101.0" />
+      <point x="-35.200000000000045" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7383377321982184" x="1161.7845875842336" y="489.09065980108755" />
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+  <SelectedNodes>
+    <node>model.request.BadRequest</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
