@@ -7,6 +7,7 @@ public class Block {
     private java.util.ArrayList<Element> elements = new ArrayList<Element>();
     private double score = 0;
     private boolean hasDefence = false;
+    private int blockSize;
 
     public boolean isHasDefence() {
         return hasDefence;
@@ -15,8 +16,6 @@ public class Block {
     public void setHasDefence(boolean hasDefence) {
         this.hasDefence = hasDefence;
     }
-
-    private int blockSize;
 
     public ArrayList<Element> getElements() {
         return elements;
@@ -40,5 +39,13 @@ public class Block {
 
     public void setBlockSize(int blockSize) {
         this.blockSize = blockSize;
+    }
+
+    public int getPersons() {
+        return 0;
+    }
+
+    public double geUnemployedPersons() {
+        return 0;
     }
 }
