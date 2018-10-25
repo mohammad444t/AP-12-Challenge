@@ -13,7 +13,7 @@ public class CityController {
     private boolean isPlayer1Active = true;
     private Player activePlayer = player1;
     private View view = new View();
-    private CommandAnalyzer commandAnalyzer;
+    private CommandAnalyzer commandAnalyzer = new CommandAnalyzer();
 
     public void listenForCommand() {
 
@@ -64,7 +64,7 @@ public class CityController {
                 yieldAction((YieldRequest)request, activePlayer);
                 isFinished = true;
             } else if (request instanceof BadRequest) {
-                badAction((BadRequest)request);
+                badAction();
             }
         }
 
@@ -491,7 +491,7 @@ public class CityController {
         }
     }
 
-    public void badAction(BadRequest request) {
+    public void badAction() {
         view.logNotPossible();
     }
 }
