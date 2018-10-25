@@ -76,4 +76,18 @@ public class Block {
         this.blockSize = blockSize;
     }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+    public int getPersons() {
+        return 0;
+    }
+
+    public double geUnemployedPersons() {
+        return 0;
+    }
+=======
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
