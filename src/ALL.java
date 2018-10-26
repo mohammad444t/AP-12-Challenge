@@ -1,9 +1,10 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class ALL { public static void main(String[] args) {new CityController().listenForCommand();}}
 
 
-public class View {
+class View {
     private static Scanner input = new Scanner(System.in);
 
     public String getCommand() {
@@ -31,9 +32,7 @@ public class View {
     }
 }
 
-import java.util.ArrayList;
-
-public class Player {
+class Player {
     private int money = 30000;
     private java.util.ArrayList<Block> blocks = new ArrayList<Block>();
     private boolean hasArmy = false;
@@ -81,7 +80,7 @@ public class Player {
     }
 }
 
-public class Home extends Element {
+class Home extends Element {
     private int floor;
     private int unit;
 
@@ -112,11 +111,11 @@ public class Home extends Element {
     }
 }
 
-public abstract class Element {
+abstract class Element {
     public abstract double getScore();
 }
 
-public class Defence extends Element {
+class Defence extends Element {
     private int level;
     private int[][] personsDetails = new int[5][2];
 
@@ -160,7 +159,7 @@ public class Defence extends Element {
     }
 }
 
-public class Block {
+class Block {
 
     private java.util.ArrayList<Element> elements = new ArrayList<Element>();
     private boolean hasDefence = false;
@@ -243,7 +242,7 @@ public class Block {
     }
 }
 
-public class Bazaar extends Element {
+class Bazaar extends Element {
     private int level;
     private int[][] personsDetails = new int[3][2];
 
@@ -281,7 +280,7 @@ public class Bazaar extends Element {
     }
 }
 
-public class Army extends Element {
+class Army extends Element {
     private int level;
     private int[][] personsDetails = new int[5][2];
 
@@ -326,13 +325,13 @@ public class Army extends Element {
     }
 }
 
-public class YieldRequest extends Request {
+class YieldRequest extends Request {
 
     public YieldRequest() {
     }
 }
 
-public class UpgradeWorkPlaceRequest extends Request {
+class UpgradeWorkPlaceRequest extends Request {
     private int blockID;
     private int unitID;
 
@@ -358,7 +357,7 @@ public class UpgradeWorkPlaceRequest extends Request {
     }
 }
 
-public class UpgradeHomeRequest extends Request {
+class UpgradeHomeRequest extends Request {
     private int blockID;
     private int floor;
     private int unit;
@@ -405,7 +404,7 @@ public class UpgradeHomeRequest extends Request {
     }
 }
 
-public class UpgradeBlockRequest extends Request {
+class UpgradeBlockRequest extends Request {
     private int blockID;
 
     public UpgradeBlockRequest(int blockID) {
@@ -421,26 +420,26 @@ public class UpgradeBlockRequest extends Request {
     }
 }
 
-public class SeeScoreRequest extends Request {
+class SeeScoreRequest extends Request {
 
     public SeeScoreRequest() {
     }
 }
 
-public class SeeGillsRequest extends Request {
+class SeeGillsRequest extends Request {
 
     public SeeGillsRequest() {
     }
 }
 
-public class Request {
+class Request {
 
     public Request() {
     }
 
 }
 
-public class RemoveWorkPlaceRequest extends Request {
+class RemoveWorkPlaceRequest extends Request {
     private int blockID;
     private int unitID;
 
@@ -466,7 +465,7 @@ public class RemoveWorkPlaceRequest extends Request {
     }
 }
 
-public class RemoveBlockRequest extends Request {
+class RemoveBlockRequest extends Request {
     private int blockID;
 
     public RemoveBlockRequest(int blockID) {
@@ -482,7 +481,7 @@ public class RemoveBlockRequest extends Request {
     }
 }
 
-public class LootRequest extends Request {
+class LootRequest extends Request {
     private int blockID;
 
     public LootRequest(int blockID) {
@@ -498,18 +497,18 @@ public class LootRequest extends Request {
     }
 }
 
-public class DoneRequest extends Request {
+class DoneRequest extends Request {
     public DoneRequest() {
     }
 
 }
 
-public class BadRequest extends Request {
+class BadRequest extends Request {
     public BadRequest() {
     }
 }
 
-public class AttackRequest extends Request {
+class AttackRequest extends Request {
 
     private int blockID;
 
@@ -526,7 +525,7 @@ public class AttackRequest extends Request {
     }
 }
 
-public class AddHomeRequest extends Request {
+class AddHomeRequest extends Request {
     private int blockID;
     private int floorNumbers;
     private int unitNumbers;
@@ -562,7 +561,7 @@ public class AddHomeRequest extends Request {
     }
 }
 
-public class AddGilgArmyRequest extends Request {
+class AddGilgArmyRequest extends Request {
     private int blockID;
     private String type;
 
@@ -592,7 +591,7 @@ public class AddGilgArmyRequest extends Request {
     }
 }
 
-public class AddBlockRequest extends Request {
+class AddBlockRequest extends Request {
 
     public AddBlockRequest() {
     }
@@ -600,7 +599,7 @@ public class AddBlockRequest extends Request {
 
 }
 
-public class AddBazaarRequest extends Request {
+class AddBazaarRequest extends Request {
     private int blockID;
 
     public AddBazaarRequest(int blockID) {
@@ -616,7 +615,7 @@ public class AddBazaarRequest extends Request {
     }
 }
 
-public class CommandAnalyzer {
+class CommandAnalyzer {
 
     private final String ADD_BAZAAR_REQUEST = "add bazaar ([1-9]|[1-9][0-9])";
     private final String ADD_BLOCK_REQUEST = "add block";
@@ -701,7 +700,7 @@ public class CommandAnalyzer {
 
 }
 
-public class CityController {
+class CityController {
     private Player player1 = new Player();
     private Player player2 = new Player();
     private boolean isPlayer1Active = true;
