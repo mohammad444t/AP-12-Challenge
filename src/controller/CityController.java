@@ -488,7 +488,7 @@ public class CityController {
             Home home =(Home) blocks.get(blockID - 1).getElements().get(unitID);
             if (isUnit == 0 && isFloor == 1) {
                 int price = home.getUnit() * 50 + 300;
-                if (price < activePlayer.getMoney())
+                if (price > activePlayer.getMoney())
                     view.logNotPossible();
                 else  {
                     home.setFloor(home.getFloor()+1);
@@ -498,7 +498,7 @@ public class CityController {
 
             if (isUnit == 1 && isFloor == 1) {
                 int price = home.getFloor()*50 + (home.getUnit()+1) * 50 + 300;
-                if (price < activePlayer.getMoney())
+                if (price > activePlayer.getMoney())
                     view.logNotPossible();
                 else {
                     home.setFloor(home.getFloor() + 1);
@@ -509,7 +509,7 @@ public class CityController {
 
             if (isUnit == 1 && isFloor == 0) {
                 int price = home.getFloor()*50;
-                if (price < activePlayer.getMoney())
+                if (price > activePlayer.getMoney())
                     view.logNotPossible();
                 else {
                     home.setUnit(home.getUnit() + 1);
