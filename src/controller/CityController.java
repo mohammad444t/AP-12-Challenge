@@ -1,11 +1,8 @@
 package controller;
 
-import model.Bazaar;
-import model.Element;
-import model.Player;
+import model.*;
 import model.request.*;
 import view.View;
-import model.Block;
 
 import java.util.ArrayList;
 
@@ -83,7 +80,9 @@ public class CityController {
         }
         else {
             ArrayList<Element> elements = blocks.get(ID-1).getElements();
-            Element newElement = new Bazaar();
+            Element newElement = new Bazaar(
+
+            );
             elements.add(newElement);
             blocks.get(ID-1).setElements(elements);
             activePlayer.setBlocks(blocks);
@@ -114,5 +113,118 @@ public class CityController {
 
     public void doneAction (DoneRequest request, Player activePlayer) {
 
+    }
+    public void upgradeBlockAction (UpgaradeBlockRequest request , Player activePlayer){
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        if (request.getBlockID() > blocks.size() ){
+            view.logNotPossible();
+        } else if (blocks.get(request.getBlockID() - 1) == null){
+            view.logNotPossible();
+        }
+        else {
+
+            int blockSize = blocks.get(request.getBlockID() - 1).getBlockSize();
+            int blockLevel = (blockSize - 10) / 5;
+            if (blockLevel > 2 || pow(500 , blockLevel) > activePlayer.getMoney()){
+                view.logNotPossible();
+            } else{
+                activePlayer.setMoney(activePlayer.getMoney() - pow(500 , blockLevel));
+                blockSize += 5;
+                Block blockToUpdate = blocks.get(request.getBlockID() - 1);
+                blockToUpdate.setBlockSize(blockSize);
+                blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                activePlayer.setBlocks(blocks);
+            }
+        }
+    }
+
+    public void upgradeWorkPlaceAction (UpgradeWorkPlaceRequest request , Player activePlayer){
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        if (request.getBlockID() > blocks.size() ){
+            view.logNotPossible();
+        } else if (blocks.get(request.getBlockID() - 1) == null){
+            view.logNotPossible();
+        } else{
+            Block blockToUpdate = blocks.get(request.getBlockID() - 1);
+            ArrayList<Element> elements = blockToUpdate.getElements();
+            if (request.getUnitID() >  elements.size()){
+                view.logNotPossible();
+            } else if (elements.get(request.getUnitID() - 1) == null){
+                view.logNotPossible();
+            } else{
+                Element elementToUpdate = elements.get(request.getUnitID() - 1);
+                if (elementToUpdate instanceof model.Army){
+                    Army army = (Army)elementToUpdate;
+                    int armyLevel = army.getLevel();
+                    if (armyLevel > 4 || activePlayer.getMoney() < 20000){
+                        view.logNotPossible();
+                    } else {
+                        int unemployedPersons = blockToUpdate.getTotalUnemplyedPersons();
+                        if (unemployedPersons < 10){
+                            view.logNotPossible();
+                        } else {
+                            blockToUpdate.setTotalUnemplyedPersons( unemployedPersons - 10 );
+                            int money = activePlayer.getMoney();
+                            activePlayer.setMoney(money - 20000);
+                            army.setLevel(armyLevel + 1);
+                            elements.set(request.getUnitID() - 1 , army);
+                            blockToUpdate.setElements(elements);
+                            blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                            activePlayer.setBlocks(blocks);
+
+                        }
+
+                    }
+                } else if (elementToUpdate instanceof model.Defence){
+                    Defence defence = (Defence) elementToUpdate;
+                    int defenceLevel = defence.getLevel();
+                    if (defenceLevel > 4 || activePlayer.getMoney() < 5000){
+                        view.logNotPossible();
+                    } else {
+                        int money = activePlayer.getMoney();
+                        activePlayer.setMoney(money - 5000);
+                        defence.setLevel(defenceLevel + 1);
+                        elements.set(request.getUnitID() - 1 , defence);
+                        blockToUpdate.setElements(elements);
+                        blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                        activePlayer.setBlocks(blocks);
+                    }
+                } else if (elementToUpdate instanceof model.Bazaar){
+                    Bazaar bazaar = (Bazaar) elementToUpdate;
+                    int bazaarLevel = bazaar.getLevel();
+                    if (bazaarLevel > 2 || activePlayer.getMoney() < (bazaarLevel - 1) * 5000){
+                        view.logNotPossible();
+                    } else {
+                        int unemployedPersons = blockToUpdate.getTotalUnemplyedPersons();
+                        if (unemployedPersons < 20){
+                            view.logNotPossible();
+                        } else {
+                            blockToUpdate.setTotalUnemplyedPersons( unemployedPersons - 20 );
+                            int money = activePlayer.getMoney();
+                            activePlayer.setMoney(money - (bazaarLevel - 1) * 5000);
+                            if (bazaarLevel == 1){
+                                blockToUpdate.setBasicPoint(blockToUpdate.getBasicPoint() * 1.4 / 1.2);
+                            } else if (bazaarLevel == 2){
+                                blockToUpdate.setBasicPoint(blockToUpdate.getBasicPoint() * 1.6 / 1.4);
+                            }
+                            bazaar.setLevel(bazaarLevel + 1);
+                            elements.set(request.getUnitID() - 1 , bazaar);
+                            blockToUpdate.setElements(elements);
+                            blocks.set(request.getBlockID() - 1 , blockToUpdate);
+                            activePlayer.setBlocks(blocks);
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+    public int pow (int base , int power){
+        int toReturn = 1;
+        for (int i = 0 ; i < power ; i++){
+            toReturn = toReturn * base;
+        }
+        return toReturn;
     }
 }
