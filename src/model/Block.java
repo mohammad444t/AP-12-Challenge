@@ -9,7 +9,7 @@ public class Block {
     private double basicPoint = 1;
     private int blockSize;
     private int totalPersons = 0;
-    private int totalUnemplyedPersons = 0;
+    private int totalUnemployedPersons = 0;
 
     public boolean isHasDefence() {
         return hasDefence;
@@ -31,12 +31,12 @@ public class Block {
         this.totalPersons = totalPersons;
     }
 
-    public int getTotalUnemplyedPersons() {
-        return totalUnemplyedPersons;
+    public int getTotalUnemployedPersons() {
+        return totalUnemployedPersons;
     }
 
-    public void setTotalUnemplyedPersons(int totalUnemplyedPersons) {
-        this.totalUnemplyedPersons = totalUnemplyedPersons;
+    public void setTotalUnemployedPersons(int totalUnemployedPersons) {
+        this.totalUnemployedPersons = totalUnemployedPersons;
     }
 
     public void setHasDefence(boolean hasDefence) {
