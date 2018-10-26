@@ -560,17 +560,17 @@ public class CityController {
                 view.logNotPossible();
             } else{
                 Element elementToUpdate = elements.get(request.getUnitID() - 1);
-                if (elementToUpdate instanceof model.Army){
+                if (elementToUpdate instanceof Army){
                     Army army = (Army)elementToUpdate;
                     int armyLevel = army.getLevel();
                     if (armyLevel > 4 || activePlayer.getMoney() < 20000){
                         view.logNotPossible();
                     } else {
-                        int unemployedPersons = blockToUpdate.getTotalUnemplyedPersons();
+                        int unemployedPersons = blockToUpdate.getTotalUnemployedPersons();
                         if (unemployedPersons < 10){
                             view.logNotPossible();
                         } else {
-                            blockToUpdate.setTotalUnemplyedPersons( unemployedPersons - 10 );
+                            blockToUpdate.setTotalUnemployedPersons( unemployedPersons - 10 );
                             int money = activePlayer.getMoney();
                             activePlayer.setMoney(money - 20000);
                             army.setLevel(armyLevel + 1);
@@ -582,7 +582,7 @@ public class CityController {
                         }
 
                     }
-                } else if (elementToUpdate instanceof model.Defence){
+                } else if (elementToUpdate instanceof Defence){
                     Defence defence = (Defence) elementToUpdate;
                     int defenceLevel = defence.getLevel();
                     if (defenceLevel > 4 || activePlayer.getMoney() < 5000){
@@ -596,17 +596,17 @@ public class CityController {
                         blocks.set(request.getBlockID() - 1 , blockToUpdate);
                         activePlayer.setBlocks(blocks);
                     }
-                } else if (elementToUpdate instanceof model.Bazaar){
+                } else if (elementToUpdate instanceof Bazaar){
                     Bazaar bazaar = (Bazaar) elementToUpdate;
                     int bazaarLevel = bazaar.getLevel();
                     if (bazaarLevel > 2 || activePlayer.getMoney() < (bazaarLevel - 1) * 5000){
                         view.logNotPossible();
                     } else {
-                        int unemployedPersons = blockToUpdate.getTotalUnemplyedPersons();
+                        int unemployedPersons = blockToUpdate.getTotalUnemployedPersons();
                         if (unemployedPersons < 20){
                             view.logNotPossible();
                         } else {
-                            blockToUpdate.setTotalUnemplyedPersons( unemployedPersons - 20 );
+                            blockToUpdate.setTotalUnemployedPersons( unemployedPersons - 20 );
                             int money = activePlayer.getMoney();
                             activePlayer.setMoney(money - (bazaarLevel - 1) * 5000);
                             if (bazaarLevel == 1){
