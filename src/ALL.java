@@ -1158,6 +1158,30 @@ class CityController {
         view.logSeeScore(score);
     }
     public void yieldAction (YieldRequest request, Player activePlayer, Player deactivePlayer) {
+        int money = activePlayer.getMoney();
+        ArrayList<Block> blocks = activePlayer.getBlocks();
+        for (Block block : blocks) {
+            if (block != null) {
+                money += 100 * block.getTotalUnemployedPersons();
+                ArrayList<Element> elements = block.getElements();
+                for (Element element : elements) {
+                    if (element instanceof Army) {
+                        ((Army) element).incrementDaysBuilt();
+                        money += ((Army) element).getPersonsIncome();
+                    }
+                    else if (element instanceof Defence) {
+                        ((Defence) element).incrementDaysBuilt();
+                        money += ((Defence) element).getPersonsIncome();
+                    }
+                    else if (element instanceof Bazaar) {
+                        ((Bazaar) element).incrementDaysBuilt();
+                        money += ((Bazaar) element).getPersonsIncome();
+                    }
+                }
+            }
+        }
+        activePlayer.setBlocks(blocks);
+        activePlayer.setMoney(money);
         double score1 = activePlayer.getScore();
         double score2 = deactivePlayer.getScore();
 
