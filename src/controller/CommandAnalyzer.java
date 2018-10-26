@@ -35,7 +35,7 @@ public class CommandAnalyzer {
             return new AddGilgArmyRequest(Integer.parseInt(params[2]) , "army");
         }else if (command.matches(ADD_DEFENCE_REQUEST)){
             String[] params = command.split(" ");
-            return new AddGilgArmyRequest(Integer.parseInt(params[2]) , "army");
+            return new AddGilgArmyRequest(Integer.parseInt(params[2]) , "defense");
         }
         else if (command.matches(ADD_HOME_REQUEST)){
             String[] params = command.split(" ");
