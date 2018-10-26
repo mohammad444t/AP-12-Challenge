@@ -1,6 +1,7 @@
-public class OurChallenge { public static void main(String[] args) {new CityController().listenForCommand();}}
-
 import java.util.Scanner;
+
+public class ALL { public static void main(String[] args) {new CityController().listenForCommand();}}
+
 
 public class View {
     private static Scanner input = new Scanner(System.in);
