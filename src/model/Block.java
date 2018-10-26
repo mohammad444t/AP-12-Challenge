@@ -63,8 +63,19 @@ public class Block {
                 double homePoint = 10 + floors + units * 2 + persons * 3;
                 score += homePoint + floors + units + persons;
             }
-            else
-                score += element.getScore() * this.basicPoint;
+            else {
+                if (element.getScore() == 1) {
+                    if (element instanceof Army)
+                        score += 10;
+                    else if (element instanceof Defence)
+                        score += 15;
+                    else if (element instanceof Bazaar)
+                        score += 5;
+                }
+                else
+                if (element != null)
+                    score += element.getScore();
+            }
         return score;
     }
 

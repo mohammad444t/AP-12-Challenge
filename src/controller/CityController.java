@@ -147,7 +147,7 @@ public class CityController {
             else if (blocks.get(ID-1) == null) {
                 view.logNotPossible();
             }
-            else if (blocks.get(ID-1).isHasDefence()) {
+            else if (activePlayer.isHasArmy()) {
                 view.logNotPossible();
             }
             else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
@@ -160,8 +160,8 @@ public class CityController {
             else {
                 Block block = blocks.get(ID-1);
                 ArrayList<Element> elements = block.getElements();
-                block.setHasDefence(true);
-                Element newElement = new Defence();
+                activePlayer.setHasArmy(true);
+                Element newElement = new Army();
                 elements.add(newElement);
                 block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() - 100);
                 block.setElements(elements);
@@ -184,7 +184,7 @@ public class CityController {
             else if (blocks.get(ID-1) == null) {
                 view.logNotPossible();
             }
-            else if (activePlayer.isHasArmy()) {
+            else if (blocks.get(ID-1).isHasDefence()) {
                 view.logNotPossible();
             }
             else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
@@ -197,8 +197,8 @@ public class CityController {
             else {
                 Block block = blocks.get(ID-1);
                 ArrayList<Element> elements = block.getElements();
-                activePlayer.setHasArmy(true);
-                Element newElement = new Army();
+                blocks.get(ID-1).setHasDefence(true);
+                Element newElement = new Defence();
                 elements.add(newElement);
                 block.setTotalUnemployedPersons( block.getTotalUnemployedPersons() - 30);
                 block.setElements(elements);
@@ -245,7 +245,7 @@ public class CityController {
             activePlayer.setBlocks(blocks);
             view.logAdd(elements.size());
         }
-        
+
     }
 
 
@@ -397,7 +397,7 @@ public class CityController {
 
             for (Element element : deactiveBlocks.get(ID-1).getElements()) {
                 if (element instanceof Defence) {
-                   defenceLevel = ((Defence) element).getLevel();
+                    defenceLevel = ((Defence) element).getLevel();
                 }
             }
             for (Block block : activeBlocks) {
@@ -489,8 +489,33 @@ public class CityController {
         }
         activePlayer.setBlocks(blocks);
         activePlayer.setMoney(money);
+        money = deactivePlayer.getMoney();
+        blocks = deactivePlayer.getBlocks();
+        for (Block block : blocks) {
+            if (block != null) {
+                money += 100 * block.getTotalUnemployedPersons();
+                ArrayList<Element> elements = block.getElements();
+                for (Element element : elements) {
+                    if (element instanceof Army) {
+                        ((Army) element).incrementDaysBuilt();
+                        money += ((Army) element).getPersonsIncome();
+                    }
+                    else if (element instanceof Defence) {
+                        ((Defence) element).incrementDaysBuilt();
+                        money += ((Defence) element).getPersonsIncome();
+                    }
+                    else if (element instanceof Bazaar) {
+                        ((Bazaar) element).incrementDaysBuilt();
+                        money += ((Bazaar) element).getPersonsIncome();
+                    }
+                }
+            }
+        }
+        deactivePlayer.setBlocks(blocks);
+        deactivePlayer.setMoney(money);
         double score1 = activePlayer.getScore();
         double score2 = deactivePlayer.getScore();
+
         view.logYield(score1, score2);
     }
 
@@ -511,12 +536,15 @@ public class CityController {
             view.logNotPossible();
         } else if (blocks.get(blockID - 1).getElements().get(unitID-1) instanceof Home) {
             Home home =(Home) blocks.get(blockID - 1).getElements().get(unitID-1);
+            Block block = blocks.get(blockID-1);
             if (isUnit == 0 && isFloor == 1) {
                 int price = home.getUnit() * 50 + 300;
                 if (price > activePlayer.getMoney())
                     view.logNotPossible();
                 else  {
                     home.setFloor(home.getFloor()+1);
+                    block.setTotalPersons(block.getTotalPersons() + 5 * home.getUnit());
+                    block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() + 5 * home.getUnit());
                     activePlayer.setMoney( activePlayer.getMoney() - price );
                 }
             }
@@ -528,6 +556,8 @@ public class CityController {
                 else {
                     home.setFloor(home.getFloor() + 1);
                     home.setUnit(home.getUnit() + 1);
+                    block.setTotalPersons(block.getTotalPersons() + 5 * (home.getUnit()+(home.getFloor()-1)));
+                    block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() +  5 * (home.getUnit()+(home.getFloor()-1)));
                     activePlayer.setMoney( activePlayer.getMoney() - price );
                 }
             }
@@ -538,6 +568,8 @@ public class CityController {
                     view.logNotPossible();
                 else {
                     home.setUnit(home.getUnit() + 1);
+                    block.setTotalPersons(block.getTotalPersons() + 5 * home.getFloor());
+                    block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() + 5 * home.getFloor());
                     activePlayer.setMoney( activePlayer.getMoney() - price);
                 }
             }
