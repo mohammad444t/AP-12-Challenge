@@ -14,7 +14,7 @@ public class View {
     }
 
     public void logSeeScore(double score) {
-        System.out.println(score);
+        System.out.println( String.format( "%.2f", score ));
     }
 
     public void logSeeGills(int gills) {
@@ -26,6 +26,6 @@ public class View {
     }
 
     public void logYield(double score1, double score2) {
-        System.out.println(score1 + " " + score2);
+        System.out.println( String.format( "%.2f", score1 ) + " " +  String.format( "%.2f", score2 ));
     }
 }
