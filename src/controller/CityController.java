@@ -165,6 +165,7 @@ public class CityController {
                 blocks.set(ID-1,block);
                 activePlayer.setMoney( activePlayer.getMoney() - 15000);
                 activePlayer.setBlocks(blocks);
+                view.logAdd(elements.size());
             }
         }
         else {
@@ -200,7 +201,7 @@ public class CityController {
                 block.setElements(elements);
                 blocks.set(ID-1,block);
                 activePlayer.setMoney( activePlayer.getMoney() - 10000);
-
+                view.logAdd(elements.size());
                 activePlayer.setBlocks(blocks);
             }
 
