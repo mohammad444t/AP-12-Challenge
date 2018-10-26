@@ -7,7 +7,8 @@ public class CommandAnalyzer {
 
     private final String ADD_BAZAAR_REQUEST = "add bazaar [0-9]";
     private final String ADD_BLOCK_REQUEST = "add block";
-    //private final String ADD_GILG_ARMY_REQUEST = "Add ";
+    private final String ADD_ARMY_REQUEST = "add army [0-9]";
+    private final String ADD_DEFENCE_REQUEST = "add defense [0-9]";
     private final String ADD_HOME_REQUEST = "add home [0-9] [3-6] [1-4]";
     private final String ATTACK_REQUEST = "attack [0-9]";
     private final String DONE_REQUEST = "done";
@@ -29,7 +30,14 @@ public class CommandAnalyzer {
             return new AddBazaarRequest(Integer.parseInt(params[2]));
         } else if (command.matches(ADD_BLOCK_REQUEST)){
             return new AddBlockRequest();
-        } else if (command.matches(ADD_HOME_REQUEST)){
+        } else if (command.matches(ADD_ARMY_REQUEST)) {
+            String[] params = command.split(" ");
+            return new AddGilgArmyRequest(Integer.parseInt(params[2]) , "army");
+        }else if (command.matches(ADD_DEFENCE_REQUEST)){
+            String[] params = command.split(" ");
+            return new AddGilgArmyRequest(Integer.parseInt(params[2]) , "army");
+        }
+        else if (command.matches(ADD_HOME_REQUEST)){
             String[] params = command.split(" ");
             return new AddHomeRequest(Integer.parseInt(params[2]) , Integer.parseInt(params[3]) ,
                     Integer.parseInt(params[4]));
