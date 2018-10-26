@@ -485,10 +485,10 @@ public class CityController {
             view.logNotPossible();
         } else if (unitID > blocks.get(blockID - 1).getElements().size()) {
             view.logNotPossible();
-        } else if (blocks.get(blockID - 1).getElements().get(unitID) == null) {
+        } else if (blocks.get(blockID - 1).getElements().get(unitID-1) == null) {
             view.logNotPossible();
-        } else if (blocks.get(blockID - 1).getElements().get(unitID) instanceof Home) {
-            Home home =(Home) blocks.get(blockID - 1).getElements().get(unitID);
+        } else if (blocks.get(blockID - 1).getElements().get(unitID-1) instanceof Home) {
+            Home home =(Home) blocks.get(blockID - 1).getElements().get(unitID-1);
             if (isUnit == 0 && isFloor == 1) {
                 int price = home.getUnit() * 50 + 300;
                 if (price > activePlayer.getMoney())
