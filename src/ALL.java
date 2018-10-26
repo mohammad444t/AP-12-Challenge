@@ -840,7 +840,7 @@ class CityController {
             else if (blocks.get(ID-1) == null) {
                 view.logNotPossible();
             }
-            else if (blocks.get(ID-1).isHasDefence()) {
+            else if (activePlayer.isHasArmy()) {
                 view.logNotPossible();
             }
             else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
@@ -853,8 +853,8 @@ class CityController {
             else {
                 Block block = blocks.get(ID-1);
                 ArrayList<Element> elements = block.getElements();
-                block.setHasDefence(true);
-                Element newElement = new Defence();
+                activePlayer.setHasArmy(true);
+                Element newElement = new Army();
                 elements.add(newElement);
                 block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() - 100);
                 block.setElements(elements);
@@ -877,7 +877,7 @@ class CityController {
             else if (blocks.get(ID-1) == null) {
                 view.logNotPossible();
             }
-            else if (activePlayer.isHasArmy()) {
+            else if (blocks.get(ID-1).isHasDefence()) {
                 view.logNotPossible();
             }
             else if (blocks.get(ID-1).getBlockSize() <= blocks.get(ID-1).getElements().size()) {
@@ -890,8 +890,8 @@ class CityController {
             else {
                 Block block = blocks.get(ID-1);
                 ArrayList<Element> elements = block.getElements();
-                activePlayer.setHasArmy(true);
-                Element newElement = new Army();
+                blocks.get(ID-1).setHasDefence(true);
+                Element newElement = new Defence();
                 elements.add(newElement);
                 block.setTotalUnemployedPersons( block.getTotalUnemployedPersons() - 30);
                 block.setElements(elements);
