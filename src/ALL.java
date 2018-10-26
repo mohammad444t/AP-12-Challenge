@@ -1206,12 +1206,15 @@ class CityController {
             view.logNotPossible();
         } else if (blocks.get(blockID - 1).getElements().get(unitID-1) instanceof Home) {
             Home home =(Home) blocks.get(blockID - 1).getElements().get(unitID-1);
+            Block block = blocks.get(blockID-1);
             if (isUnit == 0 && isFloor == 1) {
                 int price = home.getUnit() * 50 + 300;
                 if (price > activePlayer.getMoney())
                     view.logNotPossible();
                 else  {
                     home.setFloor(home.getFloor()+1);
+                    block.setTotalPersons(block.getTotalPersons() + 5 * home.getUnit());
+                    block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() + 5 * home.getUnit());
                     activePlayer.setMoney( activePlayer.getMoney() - price );
                 }
             }
@@ -1223,6 +1226,8 @@ class CityController {
                 else {
                     home.setFloor(home.getFloor() + 1);
                     home.setUnit(home.getUnit() + 1);
+                    block.setTotalPersons(block.getTotalPersons() + 5 * (home.getUnit()+(home.getFloor()-1)));
+                    block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() +  5 * (home.getUnit()+(home.getFloor()-1)));
                     activePlayer.setMoney( activePlayer.getMoney() - price );
                 }
             }
@@ -1233,6 +1238,8 @@ class CityController {
                     view.logNotPossible();
                 else {
                     home.setUnit(home.getUnit() + 1);
+                    block.setTotalPersons(block.getTotalPersons() + 5 * home.getFloor());
+                    block.setTotalUnemployedPersons(block.getTotalUnemployedPersons() + 5 * home.getFloor());
                     activePlayer.setMoney( activePlayer.getMoney() - price);
                 }
             }
