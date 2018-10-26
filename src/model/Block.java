@@ -59,7 +59,7 @@ public class Block {
                 double persons = this.basicPoint * home.getFloor() * home.getUnit() * 5;
                 double units = home.getUnit() * home.getFloor() * (2 + 5 * this.basicPoint);
                 double floors = home.getFloor() * (3 + home.getUnit() * (2 + 5 * this.basicPoint) +
-                        home.getFloor() * home.getUnit() * 5 * this.basicPoint * 3);
+                        home.getUnit() * 5 * this.basicPoint * 2);
                 double homePoint = 10 + floors + units * 2 + persons * 3;
                 score += homePoint + floors + units + persons;
             }
