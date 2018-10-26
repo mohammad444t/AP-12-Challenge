@@ -61,7 +61,7 @@ public class CommandAnalyzer {
             return new SeeScoreRequest();
         } else if (command.matches(UPGRADE_BLOCK_REQUEST)) {
             String[] params = command.split(" ");
-            return new UpgaradeBlockRequest(Integer.parseInt(params[1]));
+            return new UpgradeBlockRequest(Integer.parseInt(params[1]));
         } else if (command.matches(UPGRADE_HOME_REQUEST_FLOOR)){
             String[] params = command.split(" ");
             return new UpgradeHomeRequest(Integer.parseInt(params[1]) , Integer.parseInt(params[2]) , 1 , 0);

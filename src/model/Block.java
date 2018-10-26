@@ -76,4 +76,11 @@ public class Block {
         this.blockSize = blockSize;
     }
 
+    public int getPersons() {
+        return 0;
+    }
+
+    public double geUnemployedPersons() {
+        return 0;
+    }
 }
