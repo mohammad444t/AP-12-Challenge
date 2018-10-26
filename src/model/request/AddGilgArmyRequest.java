@@ -4,6 +4,11 @@ public class AddGilgArmyRequest extends Request {
     private int blockID;
     private String type;
 
+    public AddGilgArmyRequest(int blockID, String type) {
+        this.blockID = blockID;
+        this.type = type;
+    }
+
     public AddGilgArmyRequest(String type) {
         this.type = type;
     }
