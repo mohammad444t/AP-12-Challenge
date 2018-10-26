@@ -61,7 +61,10 @@ public class CityController {
             } else if (request instanceof UpgradeWorkPlaceRequest) {
                 upgradeWorkPlaceAction((UpgradeWorkPlaceRequest)request, activePlayer);
             } else if (request instanceof YieldRequest) {
-                yieldAction((YieldRequest)request, activePlayer);
+                if (isPlayer1Active)
+                    yieldAction((YieldRequest)request, activePlayer, player2);
+                else
+                    yieldAction((YieldRequest)request, activePlayer, player1);
                 isFinished = true;
             } else if (request instanceof BadRequest) {
                 badAction();
@@ -461,12 +464,12 @@ public class CityController {
 
         view.logSeeScore(score);
     }
-    public void yieldAction (YieldRequest request, Player activePlayer) {
-        double score1=player1.getScore();
-        double score2=player2.getScore();
+    public void yieldAction (YieldRequest request, Player activePlayer, Player deactivePlayer) {
+        double score1 = activePlayer.getScore();
+        double score2 = deactivePlayer.getScore();
 
 
-        view.logYield(score1,score2);
+        view.logYield(score1, score2);
     }
 
     public void upgradeHomeAction ( UpgradeHomeRequest request, Player activePlayer) {
